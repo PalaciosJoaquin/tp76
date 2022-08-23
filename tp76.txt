@@ -1,0 +1,63 @@
+CREATE DATABASE Examen
+  CHARACTER SET DEFAULT
+  COLLATE DEFAULT;
+  
+ 1)
+CREATE TABLE clientes (
+  idcliente         int NOT NULL,
+  nombrecliente     varchar(20) DEFAULT NULL,
+  apellidocliente   varchar(20) DEFAULT NULL,
+  fechanaccliente   varchar(20) DEFAULT NULL,
+  pesocliente       float DEFAULT NULL,
+  alturacliente     float DEFAULT NULL,
+  domiciliocliente  varchar(20) DEFAULT NULL,
+  codigopostal      int DEFAULT NULL,
+  movil01cliente    varchar(20) DEFAULT NULL,
+  movil02cliente    varchar(20) DEFAULT NULL,
+  emailcliente      varchar(25) DEFAULT NULL,
+  PRIMARY KEY (idcliente)
+) ENGINE = InnoDB;
+
+2)
+a)
+select
+*
+from clientes
+where pesocliente>90
+
+b)
+select
+*
+from clientes
+where (codigopostal=7600) and (emailcliente like '%gmail%')
+
+c)
+select
+avg(alturacliente) as promedioaltura
+from clientes
+
+d)
+select
+max(pesocliente) as mayorpeso
+from clientes
+
+e)
+select
+max(fechanaccliente)
+from clientes
+
+3)
+a)
+update clientes
+set fechanaccliente='04/04/1972'
+where apellidocliente='mercado'
+
+b)
+update clientes
+set movil02cliente='223445545'
+where apellidocliente='forchino'
+
+c)
+update clientes
+set alturacliente='1.80'
+where apellidocliente='fernandez'
